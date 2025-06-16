@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { listMyChartByPageUsingPOST } from '@/services/yubi/chartController';
-import { message } from 'antd';
+import { Avatar, List, message } from 'antd';
 
 
 /**
@@ -14,7 +14,7 @@ const MyChartPage: React.FC = () => {
   }
 
   const [searchParams, setSearchParams] = useState<API.ChartQueryRequest>({...initSearchParams});
-  const [chartList, setChartList] = useState<API.Chart>();
+  const [chartList, setChartList] = useState<API.Chart[]>();
   const [total, setTotal] = useState<number>(0);
 
   const logData = async() => {
@@ -37,9 +37,42 @@ const MyChartPage: React.FC = () => {
 
   return (
     <div className="my-chart-page">
-      数据列表
-      { JSON.stringify(chartList) }
-      <br/>
+      <List
+        itemLayout="vertical"
+        size="large"
+        pagination={{
+          onChange: (page) => {
+            console.log(page);
+          },
+          pageSize: 3,
+        }}
+        dataSource={chartList}
+        footer={
+          <div>
+            <b>ant design</b> footer part
+          </div>
+        }
+        renderItem={(item) => (
+          <List.Item
+            key={item.id}
+
+            extra={
+              <img
+                width={272}
+                alt="logo"
+                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+              />
+            }
+          >
+            <List.Item.Meta
+              avatar={<Avatar src={'https://api.dicebear.com/7.x/miniavs/svg?seed=1'} />}
+              title={item.name}
+              description={item.chartType ? ('图表类型：' + item.chartType) : undefined }
+            />
+            {'分析目标：' + item.goal}
+          </List.Item>
+        )}
+      />
       总数
       { total }
     </div>
