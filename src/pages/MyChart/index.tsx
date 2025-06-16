@@ -3,6 +3,7 @@ import { listMyChartByPageUsingPOST } from '@/services/yubi/chartController';
 import { Avatar, Card, List, message } from 'antd';
 import ReactECharts from 'echarts-for-react';
 import { useModel } from '@@/exports';
+import { Search } from '@ant-design/pro-table';
 
 
 /**
@@ -12,7 +13,8 @@ import { useModel } from '@@/exports';
 const MyChartPage: React.FC = () => {
 
   const initSearchParams = {
-    pageSize: 12,
+    current: 1,
+    pageSize: 4,
   }
 
   const [searchParams, setSearchParams] = useState<API.ChartQueryRequest>({...initSearchParams});
@@ -62,10 +64,16 @@ const MyChartPage: React.FC = () => {
           xxl: 2,
         }}
         pagination={{
-          onChange: (page) => {
-            console.log(page);
+          onChange: (page, pageSize) => {
+            setSearchParams({
+              ...searchParams,
+              current: page,
+              pageSize,
+            })
           },
+          current: searchParams.current,
           pageSize: searchParams.pageSize,
+          total: total,
         }}
         loading={loading}
         dataSource={chartList}
