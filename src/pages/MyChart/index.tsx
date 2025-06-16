@@ -3,7 +3,8 @@ import { listMyChartByPageUsingPOST } from '@/services/yubi/chartController';
 import { Avatar, Card, List, message } from 'antd';
 import ReactECharts from 'echarts-for-react';
 import { useModel } from '@@/exports';
-import { Search } from '@ant-design/pro-table';
+import Search from 'antd/es/input/Search';
+
 
 
 /**
@@ -54,6 +55,14 @@ const MyChartPage: React.FC = () => {
 
   return (
     <div className="my-chart-page">
+      <div>
+        <Search placeholder="请输入图表名称" enterButton onSearch={(value) => {
+          setSearchParams({
+            ...searchParams,
+            name: value,
+          })
+        }}/>
+      </div>
       <List
         grid = {{ gutter: 16,
           xs: 1,
