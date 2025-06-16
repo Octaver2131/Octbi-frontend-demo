@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { listMyChartByPageUsingPOST } from '@/services/yubi/chartController';
 import { Avatar, List, message } from 'antd';
+import ReactECharts from 'echarts-for-react';
 
 
 /**
@@ -57,11 +58,7 @@ const MyChartPage: React.FC = () => {
             key={item.id}
 
             extra={
-              <img
-                width={272}
-                alt="logo"
-                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-              />
+              <ReactECharts option={JSON.parse(item.genChart ?? '{}')} />
             }
           >
             <List.Item.Meta
