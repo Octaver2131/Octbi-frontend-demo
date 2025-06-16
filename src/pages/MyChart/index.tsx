@@ -56,13 +56,14 @@ const MyChartPage: React.FC = () => {
   return (
     <div className="my-chart-page">
       <div>
-        <Search placeholder="请输入图表名称" enterButton onSearch={(value) => {
+        <Search placeholder="请输入图表名称" enterButton loading={loading} onSearch={(value) => {
           setSearchParams({
             ...searchParams,
             name: value,
           })
         }}/>
       </div>
+      <div className="margin-16" />
       <List
         grid = {{ gutter: 16,
           xs: 1,
