@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer';
-import { listChartByPageUsingPOST } from '@/services/yubi/chartController';
-import { getLoginUserUsingGET, userLoginUsingPOST } from '@/services/yubi/userController';
+import { listChartByPageUsingPost } from '@/services/yubi/chartController';
+import { getLoginUserUsingGet, userLoginUsingPost } from '@/services/yubi/userController';
 import { Link } from '@@/exports';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { LoginForm, ProFormText } from '@ant-design/pro-components';
@@ -27,7 +27,7 @@ const Login: React.FC = () => {
   });
 
   useEffect(() => {
-    listChartByPageUsingPOST({}).then((res) => {
+    listChartByPageUsingPost({}).then((res) => {
       console.error('res', res);
     });
   });
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
    * 登陆成功后，获取用户登录信息
    */
   const fetchUserInfo = async () => {
-    const userInfo = await getLoginUserUsingGET();
+    const userInfo = await getLoginUserUsingGet();
     if (userInfo) {
       flushSync(() => {
         setInitialState((s) => ({
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: API.UserLoginRequest) => {
     try {
       // 登录
-      const res = await userLoginUsingPOST(values);
+      const res = await userLoginUsingPost(values);
       if (res.code === 0) {
         const defaultLoginSuccessMessage = '登录成功！';
         message.success(defaultLoginSuccessMessage);

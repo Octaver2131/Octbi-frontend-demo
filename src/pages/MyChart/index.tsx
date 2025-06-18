@@ -1,4 +1,4 @@
-import { listMyChartByPageUsingPOST } from '@/services/yubi/chartController';
+import { listMyChartByPageUsingPost } from '@/services/yubi/chartController';
 
 import { useModel } from '@@/exports';
 import {Avatar, Card, List, message, Result} from 'antd';
@@ -28,7 +28,7 @@ const MyChartPage: React.FC = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      const res = await listMyChartByPageUsingPOST(searchParams);
+      const res = await listMyChartByPageUsingPost(searchParams);
       if (res.data) {
         setChartList(res.data.records ?? []);
         setTotal(res.data.total ?? 0);
