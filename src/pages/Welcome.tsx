@@ -114,7 +114,7 @@ const Welcome: React.FC = () => {
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用 鱼智能 BI
+            欢迎使用 欧可可数据分析平台
           </div>
           <p
             style={{
@@ -126,7 +126,7 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            鱼智能 BI 是一个整合了 umi，鱼智能 BI 和 ProComponents
+            欧可可数据分析平台 是一个整合了 umi，DeepSeek 和 ProComponents
             的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
           </p>
           <div
@@ -144,9 +144,9 @@ const Welcome: React.FC = () => {
             />
             <InfoCard
               index={2}
-              title="了解 鱼智能 BI"
+              title="了解 欧可可智能数据分析平台"
               href="https://ant.design"
-              desc="antd 是基于 鱼智能 BI 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
+              desc="antd 是基于 欧可可智能数据分析平台 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
             />
             <InfoCard
               index={3}

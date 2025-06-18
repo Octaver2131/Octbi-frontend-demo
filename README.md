@@ -1,4 +1,4 @@
-# 鱼智能 BI
+# 欧可可智能数据分析平台
 
 This project is initialized with [鱼智能 BI](https://pro.ant.design). Follow is the quick guide for how to use.
 

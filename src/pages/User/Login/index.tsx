@@ -85,11 +85,11 @@ const Login: React.FC = () => {
             minWidth: 280,
             maxWidth: '75vw',
           }}
-          logo={<img alt="logo" src="/logo.svg" />}
-          title="鱼智能 BI"
+          logo={<img alt="logo" src="/favicon.ico" />}
+          title="欧可可智能数据分析平台"
           subTitle={
-            <a href="https://yupi.icu" target="_blank">
-              编程导航知识星球的原创项目
+            <a href="https://github.com/Octaver2131" target="_blank" rel="noreferrer">
+              Octaver 学习项目
             </a>
           }
           onFinish={async (values) => {
