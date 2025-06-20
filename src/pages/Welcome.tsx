@@ -1,5 +1,4 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
 import { Card, theme } from 'antd';
 import React from 'react';
 
@@ -85,18 +84,11 @@ const InfoCard: React.FC<{
 
 const Welcome: React.FC = () => {
   const { token } = theme.useToken();
-  const { initialState } = useModel('@@initialState');
   return (
     <PageContainer>
       <Card
         style={{
           borderRadius: 8,
-        }}
-        bodyStyle={{
-          backgroundImage:
-            initialState?.settings?.navTheme === 'realDark'
-              ? 'background-image: linear-gradient(75deg, #1A1B1F 0%, #191C1F 100%)'
-              : 'background-image: linear-gradient(75deg, #FBFDFF 0%, #F5F7FF 100%)',
         }}
       >
         <div
@@ -106,6 +98,7 @@ const Welcome: React.FC = () => {
             backgroundSize: '274px auto',
             backgroundImage:
               "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
+              // "url('/favicon.ico')",
           }}
         >
           <div
@@ -114,7 +107,7 @@ const Welcome: React.FC = () => {
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用 欧可可数据分析平台
+            项目介绍
           </div>
           <p
             style={{
@@ -126,14 +119,22 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            欧可可数据分析平台 是一个整合了 umi，DeepSeek 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+            <div style={{ marginBottom: 16 }}>
+              基于 React + Spring Boot + RabbitMQ + Redisson + AIGC 的智能数据分析平台。
+            </div>
+            <div style={{ marginBottom: 16 }}>
+              与传统BI不同，用户仅需导入原始数据集、输入分析诉求，平台即可自动生成可视化图表与分析结论，助力数据分析降本增效，让数据洞察更高效、便捷。
+            </div>
+            <a href="https://github.com/Octaver2131" target="_blank" rel="noreferrer" style={{ marginTop: '16px', display: 'inline-block' }}>
+              了解更多 {'>'}
+            </a>
           </p>
           <div
             style={{
               display: 'flex',
               flexWrap: 'wrap',
               gap: 16,
+              marginTop: '20px'
             }}
           >
             <InfoCard
@@ -144,9 +145,9 @@ const Welcome: React.FC = () => {
             />
             <InfoCard
               index={2}
-              title="了解 欧可可智能数据分析平台"
+              title="了解 antd"
               href="https://ant.design"
-              desc="antd 是基于 欧可可智能数据分析平台 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
+              desc="antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
             />
             <InfoCard
               index={3}
