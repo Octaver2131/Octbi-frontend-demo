@@ -1,57 +1,53 @@
 # 欧可可智能数据分析平台
 
-This project is initialized with [鱼智能 BI](https://pro.ant.design). Follow is the quick guide for how to use.
+本项目基于[鱼智能BI](https://pro.ant.design)初始化。以下是快速使用指南。
 
-## Environment Prepare
+## 环境准备
 
-Install `node_modules`:
+安装`node_modules`依赖：
 
 ```bash
-npm install
+  npm install
 ```
 
 or
 
 ```bash
-yarn
+  yarn
 ```
 
-## Provided Scripts
+### 提供的脚本
+欧可可智能分析平台 提供了一些有用的脚本来帮助你快速启动和构建web项目，进行代码风格检查和测试。
 
-鱼智能 BI provides some useful script to help you quick start and build with web project, code style check and test.
+脚本定义在package.json中，可以安全地修改或添加额外脚本：
 
-Scripts provided in `package.json`. It's safe to modify or add additional script:
-
-### Start project
+### 启动项目
 
 ```bash
-npm start
+  npm start
 ```
 
-### Build project
+### 构建项目
 
 ```bash
-npm run build
+  npm run build
 ```
 
-### Check code style
+### 代码风格检查
 
 ```bash
-npm run lint
+  npm run lint
 ```
 
-You can also use script to auto fix some lint error:
+你也可以使用脚本自动修复一些lint错误：
 
 ```bash
-npm run lint:fix
+  npm run lint:fix
 ```
 
-### Test code
+### 代码测试
 
 ```bash
-npm test
+  npm test
 ```
 
-## More
-
-You can view full document on our [official website](https://pro.ant.design). And welcome any feedback in our [github](https://github.com/ant-design/ant-design-pro).
