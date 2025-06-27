@@ -120,10 +120,10 @@ const Welcome: React.FC = () => {
             }}
           >
             <div style={{ marginBottom: 16 }}>
-              基于 React + Spring Boot + RabbitMQ + Redisson + AIGC 的智能数据分析平台。
+              基于 React + Spring Boot + RabbitMQ + Redisson + DeepSeek SDK 的智能数据分析平台。
             </div>
             <div style={{ marginBottom: 16 }}>
-              与传统BI不同，用户仅需导入原始数据集、输入分析诉求，平台即可自动生成可视化图表与分析结论，助力数据分析降本增效，让数据洞察更高效、便捷。
+              与传统 BI 不同，用户仅需导入原始数据集、输入分析诉求，平台即可自动生成可视化图表与分析结论，助力数据分析降本增效，让数据洞察更高效、便捷。
             </div>
             <a href="https://github.com/Octaver2131" target="_blank" rel="noreferrer" style={{ marginTop: '16px', display: 'inline-block' }}>
               了解更多 {'>'}
